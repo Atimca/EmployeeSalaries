@@ -18,8 +18,7 @@
 @implementation EmployeeTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
-              reuseIdentifier:(NSString *)reuseIdentifier
-{
+              reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle: style reuseIdentifier: reuseIdentifier];
 
     if (self) {

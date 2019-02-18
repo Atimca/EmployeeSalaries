@@ -14,9 +14,9 @@
 - (instancetype)initWithEmployee:(Employee *) employee {
     self = [super init];
     if (self) {
-        self.name = [NSString stringWithFormat: @"Name: %@", employee.name];
-        self.birth = [NSString stringWithFormat: @"Birth: %lu", (unsigned long)employee.birthYear];
-        self.salary = [NSString stringWithFormat: @"Salary: %@", employee.formatedSalary];
+        _name = [NSString stringWithFormat: @"Name: %@", employee.name];
+        _birth = [NSString stringWithFormat: @"Birth: %lu", (unsigned long)employee.birthYear];
+        _salary = [NSString stringWithFormat: @"Salary: %@", employee.formatedSalary];
     }
     return self;
 }

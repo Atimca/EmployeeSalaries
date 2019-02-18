@@ -20,6 +20,8 @@
 
 @implementation EmployeeViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -52,6 +54,7 @@
 }
 
 # pragma mark - UITableViewDataSource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EmployeeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     EmployeeViewState *state = self.employees[indexPath.row];
@@ -64,6 +67,7 @@
 }
 
 # pragma mark - Private
+
 - (void)update {
     [NSOperationQueue.mainQueue addOperationWithBlock:^{
         [self.indicator stopAnimating];
@@ -81,7 +85,7 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        [NSThread sleepForTimeInterval:2];
+        [NSThread sleepForTimeInterval: 2];
         NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey: @"name"  ascending: YES];
         NSSortDescriptor *birthDescriptor = [[NSSortDescriptor alloc] initWithKey: @"birth"  ascending: YES];
         NSSortDescriptor *salaryDescriptor = [[NSSortDescriptor alloc] initWithKey: @"salary"  ascending: YES];

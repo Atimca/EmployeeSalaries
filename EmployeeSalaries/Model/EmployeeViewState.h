@@ -12,9 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EmployeeViewState : NSObject
-@property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *birth;
-@property (copy, nonatomic) NSString *salary;
+@property (copy, readonly) NSString *name;
+@property (copy, readonly) NSString *birth;
+@property (copy, readonly) NSString *salary;
 - (instancetype)initWithEmployee:(Employee *) employee;
 @end
 
