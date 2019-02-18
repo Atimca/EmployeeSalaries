@@ -10,6 +10,7 @@
 #import "EmployeeDirectory.h"
 #import "EmployeeTableViewCell.h"
 #import "EmployeeViewController.h"
+#import "EmployeeViewState.h"
 
 @interface EmployeeViewController()
 @property (strong, nonatomic) EmployeeDirectory *directory;
@@ -53,10 +54,8 @@
 # pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EmployeeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
-    Employee *employee = self.employees[indexPath.row];
-    [cell renderWithName: employee.name
-               birthYear: [NSString stringWithFormat: @"%lu", (unsigned long)employee.birthYear]
-               andSalary: employee.formatedSalary];
+    EmployeeViewState *state = self.employees[indexPath.row];
+    [cell renderWithViewState: state];
     return cell;
 }
 
@@ -68,7 +67,11 @@
 - (void)update {
     [NSOperationQueue.mainQueue addOperationWithBlock:^{
         [self.indicator stopAnimating];
-        self.employees = self.directory.employees;
+        NSMutableArray *states = [NSMutableArray new];
+        for (Employee *employee in self.directory.employees) {
+            [states addObject: [[EmployeeViewState alloc] initWithEmployee: employee]];
+        }
+        self.employees = states;
         [self.tableView reloadData];
     }];
 }
@@ -80,7 +83,11 @@
         
         [NSThread sleepForTimeInterval:2];
         NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey: @"name"  ascending: YES];
-        NSArray *sortedEmployees = [self.employees sortedArrayUsingDescriptors: @[nameDescriptor]];
+        NSSortDescriptor *birthDescriptor = [[NSSortDescriptor alloc] initWithKey: @"birth"  ascending: YES];
+        NSSortDescriptor *salaryDescriptor = [[NSSortDescriptor alloc] initWithKey: @"salary"  ascending: YES];
+        NSArray *sortedEmployees = [self.employees sortedArrayUsingDescriptors: @[nameDescriptor,
+                                                                                  birthDescriptor,
+                                                                                  salaryDescriptor]];
 
         [NSOperationQueue.mainQueue addOperationWithBlock:^{
             self.employees = sortedEmployees;

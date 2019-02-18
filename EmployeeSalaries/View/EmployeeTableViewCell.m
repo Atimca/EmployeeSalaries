@@ -7,6 +7,7 @@
 //
 
 #import "EmployeeTableViewCell.h"
+#import "EmployeeViewState.h"
 
 @interface EmployeeTableViewCell()
 @property (strong, nonatomic) UILabel *nameLabel;
@@ -47,9 +48,9 @@
     return self;
 }
 
-- (void)renderWithName:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary {
-    self.nameLabel.text = [NSString stringWithFormat: @"Name: %@", name];
-    self.birthLabel.text = [NSString stringWithFormat: @"Birth: %@", year];
-    self.salaryLabel.text = [NSString stringWithFormat: @"Salary: %@", salary];
+- (void)renderWithViewState:(EmployeeViewState *)state {
+    self.nameLabel.text = state.name;
+    self.birthLabel.text = state.birth;
+    self.salaryLabel.text = state.salary;
 }
 @end

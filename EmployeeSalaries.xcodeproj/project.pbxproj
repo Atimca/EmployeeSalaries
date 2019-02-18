@@ -15,6 +15,7 @@
 		E4C13DF1221AD3E100AC079F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C13DEF221AD3E100AC079F /* LaunchScreen.storyboard */; };
 		E4C13DF4221AD3E100AC079F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C13DF3221AD3E100AC079F /* main.m */; };
 		E4E56443221AD960006B0AE8 /* EmployeeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E56442221AD960006B0AE8 /* EmployeeTableViewCell.m */; };
+		E4E56446221AEA79006B0AE8 /* EmployeeViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E56445221AEA79006B0AE8 /* EmployeeViewState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		E4C13DF3221AD3E100AC079F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E56441221AD960006B0AE8 /* EmployeeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewCell.h; sourceTree = "<group>"; };
 		E4E56442221AD960006B0AE8 /* EmployeeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewCell.m; sourceTree = "<group>"; };
+		E4E56444221AEA79006B0AE8 /* EmployeeViewState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeViewState.h; sourceTree = "<group>"; };
+		E4E56445221AEA79006B0AE8 /* EmployeeViewState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,8 @@
 				E45F641C221AD456000E7232 /* Employee.m */,
 				E45F6421221AD4FA000E7232 /* EmployeeDirectory.h */,
 				E45F6422221AD4FA000E7232 /* EmployeeDirectory.m */,
+				E4E56444221AEA79006B0AE8 /* EmployeeViewState.h */,
+				E4E56445221AEA79006B0AE8 /* EmployeeViewState.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				E45F6423221AD4FA000E7232 /* EmployeeDirectory.m in Sources */,
 				E4E56443221AD960006B0AE8 /* EmployeeTableViewCell.m in Sources */,
 				E45F641D221AD456000E7232 /* Employee.m in Sources */,
+				E4E56446221AEA79006B0AE8 /* EmployeeViewState.m in Sources */,
 				E4C13DF4221AD3E100AC079F /* main.m in Sources */,
 				E45F6429221AD802000E7232 /* EmployeeViewController.m in Sources */,
 				E4C13DE6221AD3DE00AC079F /* AppDelegate.m in Sources */,

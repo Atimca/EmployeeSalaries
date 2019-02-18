@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EmployeeViewState;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EmployeeTableViewCell : UITableViewCell
-- (void)renderWithName:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary;
+- (void)renderWithViewState:(EmployeeViewState *)state;
 @end
 
 NS_ASSUME_NONNULL_END
