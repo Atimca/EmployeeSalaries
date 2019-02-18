@@ -13,5 +13,5 @@
 @property (readonly) NSUInteger birthYear;
 @property (readonly, copy) NSDecimalNumber* salary;
 - (instancetype)initWithName:(NSString*)name birthYear:(NSUInteger)birthYear;
-
+- (NSString*)formatedSalary;
 @end

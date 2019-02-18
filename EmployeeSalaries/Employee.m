@@ -21,4 +21,11 @@ NSString* const kSalaryCurrency = @"EUR";
     }
     return self;
 }
+
+- (NSString*)formatedSalary
+{
+    NSString *symbol = [[NSLocale currentLocale]
+                        displayNameForKey:NSLocaleCurrencySymbol value:kSalaryCurrency];
+    return [[NSString alloc] initWithFormat:@"%@ %@", self.salary, symbol];
+}
 @end
