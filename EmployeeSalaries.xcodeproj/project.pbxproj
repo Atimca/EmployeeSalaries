@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E45F641D221AD456000E7232 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F641C221AD456000E7232 /* Employee.m */; };
+		E45F6423221AD4FA000E7232 /* EmployeeDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = E45F6422221AD4FA000E7232 /* EmployeeDirectory.m */; };
 		E4C13DE6221AD3DE00AC079F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C13DE5221AD3DE00AC079F /* AppDelegate.m */; };
 		E4C13DE9221AD3DE00AC079F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C13DE8221AD3DE00AC079F /* ViewController.m */; };
 		E4C13DEC221AD3DE00AC079F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C13DEA221AD3DE00AC079F /* Main.storyboard */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E45F641B221AD456000E7232 /* Employee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		E45F641C221AD456000E7232 /* Employee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		E45F6421221AD4FA000E7232 /* EmployeeDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDirectory.h; sourceTree = "<group>"; };
+		E45F6422221AD4FA000E7232 /* EmployeeDirectory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDirectory.m; sourceTree = "<group>"; };
 		E4C13DE1221AD3DE00AC079F /* EmployeeSalaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeSalaries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C13DE4221AD3DE00AC079F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4C13DE5221AD3DE00AC079F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				E4C13DE4221AD3DE00AC079F /* AppDelegate.h */,
+				E45F641B221AD456000E7232 /* Employee.h */,
+				E45F641C221AD456000E7232 /* Employee.m */,
+				E45F6421221AD4FA000E7232 /* EmployeeDirectory.h */,
+				E45F6422221AD4FA000E7232 /* EmployeeDirectory.m */,
 				E4C13DE5221AD3DE00AC079F /* AppDelegate.m */,
 				E4C13DE7221AD3DE00AC079F /* ViewController.h */,
 				E4C13DE8221AD3DE00AC079F /* ViewController.m */,
@@ -142,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C13DE9221AD3DE00AC079F /* ViewController.m in Sources */,
+				E45F6423221AD4FA000E7232 /* EmployeeDirectory.m in Sources */,
+				E45F641D221AD456000E7232 /* Employee.m in Sources */,
 				E4C13DF4221AD3E100AC079F /* main.m in Sources */,
 				E4C13DE6221AD3DE00AC079F /* AppDelegate.m in Sources */,
 			);
