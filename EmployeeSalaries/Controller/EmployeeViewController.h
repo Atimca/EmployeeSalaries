@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EmployeeViewController.h
 //  EmployeeSalaries
 //
 //  Created by Smirnov Maksim on 18/02/2019.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface EmployeeViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

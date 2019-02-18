@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Employee.h"
+#import "EmployeeViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -15,6 +15,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame: UIScreen.mainScreen.bounds];
+    self.window.rootViewController = [[EmployeeViewController alloc] initWithNibName: nil bundle: nil];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 @end

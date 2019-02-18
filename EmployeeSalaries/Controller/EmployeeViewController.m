@@ -1,23 +1,22 @@
 //
-//  ViewController.m
+//  EmployeeViewController.m
 //  EmployeeSalaries
 //
 //  Created by Smirnov Maksim on 18/02/2019.
 //  Copyright © 2019 ms. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "Employee.h"
+#import "EmployeeViewController.h"
 
-@interface ViewController ()
+@interface EmployeeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation EmployeeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
-
 
 @end
