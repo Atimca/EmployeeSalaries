@@ -14,12 +14,18 @@
 @interface EmployeeViewController()
 @property (strong, nonatomic) EmployeeDirectory *directory;
 @property (copy, nonatomic) NSArray *employees;
+@property (strong, nonatomic) UIActivityIndicatorView *indicator;
 @end
 
 @implementation EmployeeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray];
+    [self.indicator hidesWhenStopped];
+    UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView: self.indicator];
+    self.navigationItem.leftBarButtonItem = barButton;
 
     [self.tableView registerClass: EmployeeTableViewCell.self forCellReuseIdentifier: @"cell"];
     self.directory = [EmployeeDirectory new];
@@ -36,6 +42,7 @@
                                                                                            target: self
                                                                                            action: @selector(sort)];
 
+    [self.indicator startAnimating];
     [self.directory update];
 }
 
@@ -60,15 +67,26 @@
 # pragma mark - Private
 - (void)update {
     [NSOperationQueue.mainQueue addOperationWithBlock:^{
+        [self.indicator stopAnimating];
         self.employees = self.directory.employees;
         [self.tableView reloadData];
     }];
 }
 
 - (void)sort {
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"  ascending:YES];
-    NSArray *sortedEmployees = [self.employees sortedArrayUsingDescriptors: @[nameDescriptor]];
-    self.employees = sortedEmployees;
-    [self.tableView reloadData];
+    [self.indicator startAnimating];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [NSThread sleepForTimeInterval:2];
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey: @"name"  ascending: YES];
+        NSArray *sortedEmployees = [self.employees sortedArrayUsingDescriptors: @[nameDescriptor]];
+
+        [NSOperationQueue.mainQueue addOperationWithBlock:^{
+            self.employees = sortedEmployees;
+            [self.tableView reloadData];
+            [self.indicator stopAnimating];
+        }];
+    });
 }
 @end
