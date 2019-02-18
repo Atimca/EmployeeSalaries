@@ -31,6 +31,7 @@
     self.navigationItem.leftBarButtonItem = barButton;
 
     [self.tableView registerClass: EmployeeTableViewCell.self forCellReuseIdentifier: @"cell"];
+    self.tableView.rowHeight = 90;
     self.directory = [EmployeeDirectory new];
     self.employees = [NSArray new];
 
