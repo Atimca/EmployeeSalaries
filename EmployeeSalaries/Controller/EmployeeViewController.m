@@ -31,6 +31,11 @@
                                            selector: @selector(update)
                                                name: kEmployeeDirectoryDidUpdateNotification
                                              object: nil];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh
+                                                                                           target: self
+                                                                                           action: @selector(sort)];
+
     [self.directory update];
 }
 
@@ -52,6 +57,7 @@
     return self.employees.count;
 }
 
+# pragma mark - Private
 - (void)update {
     [NSOperationQueue.mainQueue addOperationWithBlock:^{
         self.employees = self.directory.employees;
@@ -59,4 +65,10 @@
     }];
 }
 
+- (void)sort {
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"  ascending:YES];
+    NSArray *sortedEmployees = [self.employees sortedArrayUsingDescriptors: @[nameDescriptor]];
+    self.employees = sortedEmployees;
+    [self.tableView reloadData];
+}
 @end
