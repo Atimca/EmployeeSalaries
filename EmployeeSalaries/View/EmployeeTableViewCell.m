@@ -32,23 +32,24 @@
                                                           self.salaryLabel]];
         stack.axis = UILayoutConstraintAxisVertical;
         stack.distribution = UIStackViewDistributionFillEqually;
+        stack.spacing = 4;
 
         [self.contentView addSubview: stack];
         stack.translatesAutoresizingMaskIntoConstraints = NO;
 
         [NSLayoutConstraint
-         activateConstraints: @[[stack.topAnchor constraintEqualToAnchor: self.contentView.topAnchor],
-                                [stack.leadingAnchor constraintEqualToAnchor: self.contentView.leadingAnchor],
-                                [stack.bottomAnchor constraintEqualToAnchor: self.contentView.bottomAnchor],
-                                [stack.trailingAnchor constraintEqualToAnchor: self.contentView.trailingAnchor]]];
+         activateConstraints: @[[stack.topAnchor constraintEqualToAnchor: self.contentView.topAnchor constant: 8],
+                                [stack.leadingAnchor constraintEqualToAnchor: self.contentView.leadingAnchor constant: 16],
+                                [stack.bottomAnchor constraintEqualToAnchor: self.contentView.bottomAnchor constant: -8],
+                                [stack.trailingAnchor constraintEqualToAnchor: self.contentView.trailingAnchor constant: -16]]];
     }
 
     return self;
 }
 
-- (void)renderWith:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary {
-    self.nameLabel.text = name;
-    self.birthLabel.text = year;
-    self.salaryLabel.text = salary;
+- (void)renderWithName:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary {
+    self.nameLabel.text = [NSString stringWithFormat: @"Name: %@", name];
+    self.birthLabel.text = [NSString stringWithFormat: @"Birth: %@", year];
+    self.salaryLabel.text = [NSString stringWithFormat: @"Salary: %@", salary];
 }
 @end

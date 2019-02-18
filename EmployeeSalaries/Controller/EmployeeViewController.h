@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmployeeViewController : UIViewController
+@interface EmployeeViewController : UITableViewController
 
 @end
 

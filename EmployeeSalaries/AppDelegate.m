@@ -16,7 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame: UIScreen.mainScreen.bounds];
-    self.window.rootViewController = [[EmployeeViewController alloc] initWithNibName: nil bundle: nil];
+    UINavigationController *nc = [[UINavigationController alloc]
+                                  initWithRootViewController: [[EmployeeViewController alloc] initWithNibName: nil bundle: nil]];
+    self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];
     return YES;
 }

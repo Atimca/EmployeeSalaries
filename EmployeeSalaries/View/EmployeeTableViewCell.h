@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EmployeeTableViewCell : UITableViewCell
-- (void)renderWith:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary;
+- (void)renderWithName:(NSString *)name birthYear:(NSString *) year andSalary:(NSString *) salary;
 @end
 
 NS_ASSUME_NONNULL_END
